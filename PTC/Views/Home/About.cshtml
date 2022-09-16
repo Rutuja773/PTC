@@ -1,0 +1,156 @@
+﻿@{
+    ViewBag.Title = "About Teachback Training";
+}
+
+<h1>About  Training Page and Helper Demo</h1>
+
+<p>
+    Explore our knowledge and deliver the
+    best performance with our team. Students learn in an accessible, adaptive,
+    social learning environment.
+</p>
+<h2>Our Modules</h2>
+@Html.DropDownList("Modules", new List<SelectListItem> {
+    new SelectListItem{Text = "ASP.NET", Value = "1", Selected = true},
+    new SelectListItem{Text = "C#", Value = "1"},
+    new SelectListItem{Text = "HTML CSS", Value = "1"},
+    new SelectListItem{Text = "Javascript and Typescript", Value = "1"},
+    new SelectListItem{Text = "HTML CSS", Value = "1"}
+
+
+}, "Select Module")
+
+<p></p>
+<p></p>
+<p></p>
+
+
+<div class="well well-sm">
+    <div class="row">
+        <div class="col-md-2">
+
+            @*Stringbuilder class
+            @Html.Image("/Images/asp.jpg",
+                         "asp.net")*@
+
+            Tagbuilder class
+            @Html.Image("/Images/asp.jpg",
+                         "asp.net",
+                         "img-responsive img-rounded img-thumbnail",
+                         "imgAsp.net",
+                         new { data_action = "moreinfo", data_toggle = "imgtoggle" })
+
+
+
+            @*<img src="~/Images/asp.jpg"
+                 alt="asp.net"
+                 class="img-responsive img-rounded img-thumbnail" />*@
+        </div>
+        <div class="col-md-10">
+            <p>
+                .NET is a developer platform made up of tools, programming languages, and libraries for building many different types of applications.
+
+                ASP.NET extends the .NET developer platform with tools and libraries specifically for building web apps.
+            </p>
+            <p>
+                Using the MVC pattern for websites, requests are routed to a Controller that is responsible for working with the Model to perform actions and/or
+                retrieve data. The Controller chooses the View to display and provides it with the Model. The View renders the final page, based on the data in the Model.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="well well-sm">
+    <div class="row">
+        <div class="col-md-2">
+
+            @*Stringbuilder class*@
+            @*@Html.Image("/Images/asp.jpg",
+                            "c#.net")*@
+
+            @Html.Image("/Images/c.jpg",
+                       "c#",
+                       "img-responsive img-rounded img-thumbnail",
+                       "imgC#")
+
+
+            @*<img src="~/Images/c.jpg"
+                        alt="c#"
+                        class="img-responsive img-rounded img-thumbnail" />*@
+        </div>
+        <div class="col-md-10">
+            C# is a general-purpose, multi-paradigm programming language. C# encompasses static typing, strong typing, lexically scoped, imperative, declarative, functional,
+            generic, object-oriented, and component-oriented programming disciplines.
+        </div>
+    </div>
+</div>
+
+<div class="well well-sm">
+    <div class="row">
+        <div class="col-md-2">
+           
+            <img src="~/Images/html.jpg"
+                 alt="Html and Css"
+                 class="img-responsive img-rounded img-thumbnail"
+                 name="img_HtmlCss" />
+        </div>
+        <div class="col-md-10">
+            <p>
+                The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies
+                such as Cascading Style Sheets and scripting languages such as JavaScript.
+            </p>
+            <p>
+                Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML. CSS is a
+                cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
+            </p>
+        </div>
+    </div>
+</div>
+
+<h2>Teachback Training Form</h2>
+
+<div class="well well-sm">
+    <div class="row">
+        <div class="col-md-2">
+            @Html.Label("FirstName", "First Name")
+            @Html.TextBox("FirstName", "Rutuja", new { style = "background-color:Yellow; color:Blue; font-weight: bold", title = "Enter your First Name" })
+
+
+            @Html.Label("LastName", "Last Name")
+            @Html.TextBox("LastName", "Murge", new { style = "background-color:Yellow; color:Blue; font-weight: bold", title = "Enter your Last Name" })
+
+
+            <p>
+            </p>
+            <p>
+                @Html.Label("Password", "Password")
+                @Html.Password("Password")
+            </p>
+            <p></p>
+            <p>
+                @Html.Label("Feedback", "FeedBack")
+                @Html.TextArea("FeedBack")
+            </p>
+            Male:   @Html.RadioButton("Gender", "Male")
+            Female: @Html.RadioButton("Gender", "Female")
+
+           
+            <p></p>
+        </div>
+        
+    </div>
+</div>
+
+
+
+@*Adding Custom Extension Methods Helper *@
+<p>
+
+    @Html.File("Browse")
+</p>
+
+@*Adding Static Method Helper*@
+<p>
+    @StaticCustomHelper.File("Browse")
+</p>
+
